@@ -1,0 +1,12 @@
+Board:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/textmap.jpg
+Hero:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/dragon.png
+Fire:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/fire.png
+Archer:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/archer.png
+Worm:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/worm_idle.png
+Dragon:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/dragon_enem.png
+Heal:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/tools.png
+Poison:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/tools.png
+SuperHeal:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/tools.png
+Font:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/font/dragon.ttf
+Finish:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/finallogo.jpg
+Lose:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/finallose.jpg
