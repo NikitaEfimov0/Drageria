@@ -4,12 +4,12 @@
 
 #ifndef MVC_MVP_MEDIATOR_HPP
 #define MVC_MVP_MEDIATOR_HPP
-#include "Rules/RuleII.hpp"
-#include "Rules/RuleI.hpp"
-#include "Game.hpp"
-#include "Arbitrator.hpp"
+#include "../Rules/RuleII.hpp"
+#include "../Rules/RuleI.hpp"
+#include "../MainFiles/Game.hpp"
+#include "../MainFiles/Arbitrator.hpp"
 #include "MedInterface.hpp"
-#include "Rules/AmountOfObjects.hpp"
+#include "../Rules/AmountOfObjects.hpp"
 class Mediator: public MedInterface{
     Arbitrator* arbitrator;
     Game<RuleII<10, 10>>* game;

@@ -4,8 +4,8 @@
 
 #ifndef MVC_MVP_CELL_HPP
 #define MVC_MVP_CELL_HPP
-#include "Object.hpp"
-#include "Tool.hpp"
+#include "../Objects/Object.hpp"
+#include "../Objects/Tool.hpp"
 class Cell {
     int type;
     Object* object;

@@ -5,13 +5,13 @@
 #ifndef MVC_MVP_HERODRAW_HPP
 #define MVC_MVP_HERODRAW_HPP
 #include "ObjectDraw.hpp"
-#include "Hero.hpp"
+#include "../Objects/Hero.hpp"
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include "Cell.hpp"
+#include "../Board/Cell.hpp"
 #include "FireBallDraw.hpp"
-#include "FireBall.hpp"
-#include "KeyManagment/KeyReader.hpp"
+#include "../Objects/FireBall.hpp"
+#include "../KeyManagment/KeyReader.hpp"
 class HeroDraw:public ObjectDraw{
     Hero* hero;
     Cell** &array;

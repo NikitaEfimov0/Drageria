@@ -5,10 +5,10 @@
 #ifndef MVC_MVP_OBJECTDRAW_HPP
 #define MVC_MVP_OBJECTDRAW_HPP
 #include "SFML/Graphics.hpp"
-#include "Cell.hpp"
-#include "GetPathToTexture.hpp"
-#include "Observer.hpp"
-#include "PresentStat.hpp"
+#include "../Board/Cell.hpp"
+#include "../MainFiles/GetPathToTexture.hpp"
+#include "../Observers/Observer.hpp"
+#include "../Observers/PresentStat.hpp"
 
 class ObjectDraw {
 protected:

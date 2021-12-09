@@ -6,7 +6,7 @@
 #define MVC_MVP_OBSERVER_HPP
 #include <iostream>
 #include <fstream>
-#include "Object.hpp"
+#include "../Objects/Object.hpp"
 
 class Observer{
     std::ofstream LogFile;

@@ -5,8 +5,8 @@
 #ifndef MVC_MVP_HEALTOOLDRAW_HPP
 #define MVC_MVP_HEALTOOLDRAW_HPP
 #include "ObjectDraw.hpp"
-#include "HealTool.hpp"
-#include "Cell.hpp"
+#include "../Objects/HealTool.hpp"
+#include "../Board/Cell.hpp"
 class HealToolDraw:public ObjectDraw {
     HealTool* healTool;
     Cell**& array;

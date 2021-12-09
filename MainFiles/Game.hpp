@@ -3,7 +3,7 @@
 //
 #ifndef MVC_MVP_GAME_HPP
 #define MVC_MVP_GAME_HPP
-#include "MedInterface.hpp"
+#include "../Mediator/MedInterface.hpp"
 template<class R>
 class Game {
     MedInterface* mediator;

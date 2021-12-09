@@ -5,10 +5,10 @@
 #ifndef MVC_MVP_ARCHERDRAW_HPP
 #define MVC_MVP_ARCHERDRAW_HPP
 #include "ObjectDraw.hpp"
-#include "Archer.hpp"
+#include "../Objects/Archer.hpp"
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include "Cell.hpp"
+#include "../Board/Cell.hpp"
 class ArcherDraw:public ObjectDraw {
     Archer* archer;
     Cell** &arr;

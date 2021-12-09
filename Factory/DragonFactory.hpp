@@ -5,7 +5,7 @@
 #ifndef MVC_MVP_DRAGONFACTORY_HPP
 #define MVC_MVP_DRAGONFACTORY_HPP
 #include "Factory.hpp"
-#include "../DragonDraw.hpp"
+#include "../ObjectsDraw/DragonDraw.hpp"
 class DragonFactory:public Factory{
     DragonDraw* dragonDraw;
 public:

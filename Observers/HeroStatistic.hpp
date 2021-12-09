@@ -4,7 +4,7 @@
 
 #ifndef MVC_MVP_HEROSTATISTIC_HPP
 #define MVC_MVP_HEROSTATISTIC_HPP
-#include "Object.hpp"
+#include "../Objects/Object.hpp"
 #include "Observer.hpp"
 #include <iostream>
 class HeroStatistic:public Observer {

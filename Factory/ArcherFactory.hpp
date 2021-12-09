@@ -5,7 +5,7 @@
 #ifndef MVC_MVP_ARCHERFACTORY_HPP
 #define MVC_MVP_ARCHERFACTORY_HPP
 #include "Factory.hpp"
-#include "../ArcherDraw.hpp"
+#include "../ObjectsDraw/ArcherDraw.hpp"
 class ArcherFactory:public Factory{
     ArcherDraw* archerDraw;
 public:

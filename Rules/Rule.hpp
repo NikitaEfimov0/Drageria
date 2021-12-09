@@ -4,7 +4,7 @@
 
 #ifndef MVC_MVP_RULE_HPP
 #define MVC_MVP_RULE_HPP
-#include "../HeroStatistic.hpp"
+#include "../Observers/HeroStatistic.hpp"
 class Rule{
 public:
     Rule(){

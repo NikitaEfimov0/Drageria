@@ -4,7 +4,7 @@
 
 #ifndef MVC_MVP_WORMFACTORY_HPP
 #define MVC_MVP_WORMFACTORY_HPP
-#include "../WormDraw.hpp"
+#include "../ObjectsDraw/WormDraw.hpp"
 #include "Factory.hpp"
 class WormFactory: public Factory{
     WormDraw* wormDraw;

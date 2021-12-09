@@ -4,7 +4,7 @@
 
 #ifndef MVC_MVP_BOARDDRAW_HPP
 #define MVC_MVP_BOARDDRAW_HPP
-#include "ObjectDraw.hpp"
+#include "../ObjectsDraw/ObjectDraw.hpp"
 #include "Cell.hpp"
 class BoardDraw:public ObjectDraw {
     Cell** arr;

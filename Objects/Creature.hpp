@@ -5,8 +5,8 @@
 #ifndef MVC_MVP_CREATURE_HPP
 #define MVC_MVP_CREATURE_HPP
 #include "Object.hpp"
-#include "Observer.hpp"
-#include "HeroStatistic.hpp"
+#include "../Observers/Observer.hpp"
+#include "../Observers/HeroStatistic.hpp"
 #include <vector>
 class Creature:public Object{
 protected:

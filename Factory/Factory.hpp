@@ -4,8 +4,8 @@
 
 #ifndef MVC_MVP_FACTORY_HPP
 #define MVC_MVP_FACTORY_HPP
-#include "../ObjectDraw.hpp"
-#include "../Cell.hpp"
+#include "../ObjectsDraw/ObjectDraw.hpp"
+#include "../Board/Cell.hpp"
 class Factory{
 protected:
     Cell** array;

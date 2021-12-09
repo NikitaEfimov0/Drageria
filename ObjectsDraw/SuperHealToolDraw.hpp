@@ -4,7 +4,7 @@
 
 #ifndef MVC_MVP_SUPERHEALTOOLDRAW_HPP
 #define MVC_MVP_SUPERHEALTOOLDRAW_HPP
-#include "SuperHealTool.hpp"
+#include "../Objects/SuperHealTool.hpp"
 #include "ObjectDraw.hpp"
 
 class SuperHealToolDraw:public ObjectDraw {

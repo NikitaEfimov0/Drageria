@@ -4,9 +4,9 @@
 
 #ifndef MVC_MVP_PRESENTSTAT_HPP
 #define MVC_MVP_PRESENTSTAT_HPP
-#include "Object.hpp"
+#include "../Objects/Object.hpp"
 #include "SFML/Graphics.hpp"
-#include "GetPathToTexture.hpp"
+#include "../MainFiles/GetPathToTexture.hpp"
 #include "HeroStatistic.hpp"
 #include <iostream>
 #include <sstream>
