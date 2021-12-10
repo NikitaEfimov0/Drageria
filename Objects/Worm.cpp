@@ -9,7 +9,7 @@ Worm::Worm() {
     health = 30;
     damage = 30;
     speed = 0.003;
-    observer.push_back(new Observer(this));
+    observer.push_back(new WormSave(this));
 }
 
 Worm::Worm(int w, int h){

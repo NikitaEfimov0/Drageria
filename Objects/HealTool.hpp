@@ -5,7 +5,7 @@
 #ifndef MVC_MVP_HEALTOOL_HPP
 #define MVC_MVP_HEALTOOL_HPP
 #include "Tool.hpp"
-
+#include "../Serialisation/HealSave.hpp"
 class HealTool:public Tool {
     int healing;
     bool used;
@@ -15,6 +15,7 @@ public:
         y = 0;
         healing = 10;
         used = false;
+        observer.push_back(new HealSave(this));
     }
     void usage(Object* hero){
         hero->set_health(hero->return_health()+healing);
@@ -23,6 +24,9 @@ public:
     bool return_used(){
         return used;
     }
+    void notify(){observer[0]->update();}
+
+    void set_used(bool u){used = u;}
 };
 
 

@@ -9,6 +9,7 @@ Archer::Archer() {
     health = 10;
     damage = 10;
     speed = 0.0015;
+    observer.push_back(new ArcherSave(this));
 }
 
 Archer::Archer(int w, int h){
@@ -17,9 +18,13 @@ Archer::Archer(int w, int h){
     health = 10;
     damage = 10;
     speed = 0.0015;
-    observer.push_back(new Observer(this));
+    //observer.push_back(new Observer(this));
+
 }
 
+void Archer::notify() {
+    observer[0]->update();
+}
 void Archer::fight(Object* object) {
     health-=object->return_damage();
     object->set_health(object->return_health()-damage);

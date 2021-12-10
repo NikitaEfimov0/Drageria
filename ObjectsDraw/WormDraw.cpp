@@ -49,6 +49,7 @@ void WormDraw::move(float time){
     worm->set_x(worm->return_x()+dx*time);
     collision();
     arr[(int)(worm->return_y())][(int)(worm->return_x())].set_object(worm);
+    worm->notify();
     dx = 0;
 }
 

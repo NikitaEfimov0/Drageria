@@ -20,6 +20,7 @@ void HealToolDraw::set_graphic() {
 bool HealToolDraw::check_drawable() {
     if(healTool->return_used())
         drawable = false;
+    healTool->notify();
     return drawable;
 }
 

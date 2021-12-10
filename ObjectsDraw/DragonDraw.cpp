@@ -71,6 +71,7 @@ void DragonDraw::move(float time){
     dragon->set_x(dragon->return_x()+dx*time);
     collision();
     arr[(int)(dragon->return_y())][(int)(dragon->return_x())].set_object(dragon);
+    dragon->notify();
     dx = 0;
 }
 

@@ -5,7 +5,7 @@
 #ifndef MVC_MVP_HERO_HPP
 #define MVC_MVP_HERO_HPP
 #include "Creature.hpp"
-
+#include "../Serialisation/HeroSave.hpp"
 class Hero: public Creature{
     int kills;
     bool reachedFinish;

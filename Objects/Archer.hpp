@@ -6,11 +6,13 @@
 #define MVC_MVP_ARCHER_HPP
 #include "Enemy.hpp"
 #include "Creature.hpp"
+#include "../Serialisation/ArcherSave.hpp"
 class Archer: public Enemy{
 public:
     Archer();
     Archer(int w, int h);
     void fight(Object* object);
+    void notify();
 };
 
 

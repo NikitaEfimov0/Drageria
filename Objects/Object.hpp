@@ -29,6 +29,8 @@ public:
     virtual void notify(){}
     virtual bool returnKill(){return false;}
     bool returnF(){return false;}
+    virtual bool return_used(){return false;}
+    void set_used(bool u){}
 };
 
 

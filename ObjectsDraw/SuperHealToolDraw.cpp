@@ -21,6 +21,7 @@ void SuperHealToolDraw::set_graphic() {
 bool SuperHealToolDraw::check_drawable() {
     if(superHealTool->return_used())
         drawable = false;
+    superHealTool->notify();
     return drawable;
 }
 
@@ -39,6 +40,7 @@ void SuperHealToolDraw::SetRandomPosition(int w, int h) {
             superHealTool->set_x((float) randomElementX);
             superHealTool->set_y((float) randomElementY);
             array[randomElementY][randomElementX].set_Tool(superHealTool);
+
             count = 0;
         }
     }

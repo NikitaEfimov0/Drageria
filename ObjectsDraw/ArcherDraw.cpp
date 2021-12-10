@@ -70,6 +70,7 @@ void ArcherDraw::move(float time){
     archer->set_x(archer->return_x()+dx*time);
     collision();
     arr[(int)(archer->return_y())][(int)(archer->return_x())].set_object(archer);
+    archer->notify();
     dx = 0;
 }
 

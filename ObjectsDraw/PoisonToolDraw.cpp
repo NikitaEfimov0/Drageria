@@ -23,6 +23,7 @@ void PoisonToolDraw::set_graphic() {
 bool PoisonToolDraw::check_drawable() {
     if(poisonTool->return_used())
         drawable = false;
+    poisonTool->notify();
     return drawable;
 }
 void PoisonToolDraw::SetRandomPosition(int w, int h) {

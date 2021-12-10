@@ -11,6 +11,7 @@ Hero::Hero(){
     health = 40;
     observer.push_back(new Observer(this));
     observer.push_back(new HeroStatistic(this));
+    observer.push_back(new HeroSave(this));
     reachedFinish = false;
 }
 
@@ -24,6 +25,7 @@ Hero::Hero(int i, int j){
     reachedFinish = false;
     observer.push_back(new Observer(this));
     observer.push_back(new HeroStatistic(this));
+    observer.push_back(new HeroSave(this));
 }
 void Hero::setKills(){
     kills++;
@@ -45,4 +47,5 @@ Observer* Hero::returnConcrObs() {
 void Hero::notify() {
     observer[0]->update(2);
     observer[1]->update();
+    observer[2]->update();
 }
