@@ -10,3 +10,8 @@ SuperHeal:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/tools.png
 Font:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/font/dragon.ttf
 Finish:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/finallogo.jpg
 Lose:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/finallose.jpg
+Background:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/final.jpg
+NewGame:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/newGame.jpg
+LoadGame:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/loadGame.jpg
+Exit:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/Exit.jpg
+Logo:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/logo.jpg

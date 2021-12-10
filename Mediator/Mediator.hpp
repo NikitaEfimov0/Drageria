@@ -10,18 +10,20 @@
 #include "../MainFiles/Arbitrator.hpp"
 #include "MedInterface.hpp"
 #include "../Rules/AmountOfObjects.hpp"
+#include "../Menu/Menu.hpp"
 class Mediator: public MedInterface{
     Arbitrator* arbitrator;
     Game<RuleII<10, 10>>* game;
     AmountOfObjects<1, 1, 1> am;
+    Menu* menu = new Menu(this);
 public:
     Mediator(){
-        arbitrator = new Arbitrator(12, 12, this);
+
         game = new Game<RuleII<10, 10>>(this);
         Initiate();
     }
     void Initiate(){
-        arbitrator->start_working(am.returnArchers(), am.returnWorms(), am.returnDragons());
+        menu->checkChose();
     }
     void notify(){
         game->checkRule(arbitrator->returnStats());
@@ -33,13 +35,10 @@ public:
         }
     }
     void notify(int wantToPlay){
-//        std::cout<<"hi hter";
-//        if(wantToPlay==1) {
-//            arbitrator->exit();
-////            delete arbitrator;
-//            arbitrator = new Arbitrator(12, 12);
-//            Initiate();
-//        }
+        if(wantToPlay == 1){
+            arbitrator = new Arbitrator(12, 12, this);
+            arbitrator->start_working(am.returnArchers(), am.returnWorms(), am.returnDragons());
+        }
     }
 };
 

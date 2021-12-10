@@ -22,8 +22,11 @@ public:
     }
     SaveObject(){
     }
+    bool is_empty(std::ifstream& pFile)
+    {
+        return pFile.peek() == std::ifstream::traits_type::eof();
+    }
     //void update(){std::cout<<2;};
-    virtual void save(){};
     virtual void load(){};
 };
 #endif //MVC_MVP_SAVEOBJECT_HPP

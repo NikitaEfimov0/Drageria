@@ -6,16 +6,16 @@
 #define MVC_MVP_NEWGAME_HPP
 #include "SFML/Graphics.hpp"
 #include "MenuElement.hpp"
-class NewGame:public MenuElements{
+class NewGame:public MenuElement{
 public:
     NewGame(){
         texture = new sf::Texture();
-        texture->loadFromFile("/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/newGame.jpg");
+        texture->loadFromFile(getPath.find("NewGame"));
         sprite = new sf::Sprite();
         sprite->setTexture(*texture);
-        sprite->setTextureRect(sf::IntRect(0, 0, 500, 300));
-        x = 0;
-        y = 0;
+        sprite->setTextureRect(sf::IntRect(0, 0, 500, 150));
+        x = 710;
+        y = 300;
         sprite->setPosition(x, y);
     }
     void draw(sf::RenderWindow& window){
