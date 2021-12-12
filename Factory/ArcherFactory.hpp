@@ -9,14 +9,15 @@
 class ArcherFactory:public Factory{
     ArcherDraw* archerDraw;
 public:
-    ArcherFactory(Cell** arr, int w, int h) {
+    ArcherFactory(Cell** arr, int w, int h, bool L) {
         array = arr;
         x = w;
         y = h;
+        Load = L;
 
     }
     ObjectDraw* createObjectDraw(){
-        archerDraw = new ArcherDraw(array, x, y);
+        archerDraw = new ArcherDraw(array, x, y, Load);
         return archerDraw;
     }
 };

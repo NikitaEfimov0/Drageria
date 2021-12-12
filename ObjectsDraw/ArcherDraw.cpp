@@ -3,9 +3,10 @@
 //
 #include "ArcherDraw.hpp"
 
-ArcherDraw::ArcherDraw(Cell **&array, int w, int h):arr(array) {
-    archer = new Archer();
-    SetRandomPosition(array, w, h);
+ArcherDraw::ArcherDraw(Cell **&array, int w, int h, bool Load):arr(array) {
+    archer = new Archer(Load);
+    if(!Load)
+        SetRandomPosition(array, w, h);
     dx = 0; dy = 0;
     direction = 1;
     CurrentFrame = 0;

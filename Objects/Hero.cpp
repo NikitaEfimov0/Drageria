@@ -15,17 +15,28 @@ Hero::Hero(){
     reachedFinish = false;
 }
 
-Hero::Hero(int i, int j){
-    x = (float)i;
-    y = (float)j;
-    kills = 0;
-    speed = 0.0015;
-    damage = 30;
-    health = 40;
-    reachedFinish = false;
+Hero::Hero(int i, int j, bool Load){
     observer.push_back(new Observer(this));
     observer.push_back(new HeroStatistic(this));
     observer.push_back(new HeroSave(this));
+    if(Load)
+        observer[2]->update(1);
+    else{
+        x = (float)i;
+        y = (float)j;
+        kills = 0;
+        speed = 0.0015;
+        damage = 30;
+        health = 40;
+
+    }
+    speed = 0.0015;
+    damage = 30;
+    reachedFinish = false;
+//    observer.push_back(new Observer(this));
+//    observer.push_back(new HeroStatistic(this));
+//    observer.push_back(new HeroSave(this));
+
 }
 void Hero::setKills(){
     kills++;
@@ -47,5 +58,7 @@ Observer* Hero::returnConcrObs() {
 void Hero::notify() {
     observer[0]->update(2);
     observer[1]->update();
-    observer[2]->update();
+    observer[2]->update(0);
 }
+
+int Hero::returnMaxHealth(){return maxHealth;}

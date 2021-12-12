@@ -9,5 +9,6 @@ public:
     virtual void notify() = 0;
     virtual void notify(bool worl) = 0;
     virtual void notify(int wantToPlay) = 0;
+    virtual std::vector<int> returnAm() = 0;
 };
 #endif //MVC_MVP_MEDINTERFACE_HPP

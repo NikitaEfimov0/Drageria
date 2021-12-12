@@ -10,7 +10,7 @@ class WormDraw:public ObjectDraw {
     Worm* worm;
     Cell** &arr;
 public:
-    WormDraw(Cell **&array, int w, int h);
+    WormDraw(Cell **&array, int w, int h, bool Load);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     virtual  void move(float time);

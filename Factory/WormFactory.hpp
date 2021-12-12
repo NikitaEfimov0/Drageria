@@ -9,14 +9,14 @@
 class WormFactory: public Factory{
     WormDraw* wormDraw;
 public:
-    WormFactory(Cell** arr, int w, int h) {
+    WormFactory(Cell** arr, int w, int h, bool L) {
         array = arr;
         x = w;
         y = h;
-
+        Load = L;
     }
     ObjectDraw* createObjectDraw(){
-        wormDraw = new WormDraw(array, x, y);
+        wormDraw = new WormDraw(array, x, y, Load);
         return wormDraw;
     }
 };

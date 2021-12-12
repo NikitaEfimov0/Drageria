@@ -3,9 +3,11 @@
 //
 
 #include "HealToolDraw.hpp"
-HealToolDraw::HealToolDraw(Cell** &arr, int w, int h):array(arr) {
-    healTool = new HealTool();
-    SetRandomPosition(w, h);
+HealToolDraw::HealToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
+    healTool = new HealTool(Load);
+    if(!Load)
+        SetRandomPosition(w, h);
+    array[int(healTool->return_y())][int(healTool->return_x())].set_Tool(healTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();
     drawable = true;
@@ -38,7 +40,7 @@ void HealToolDraw::SetRandomPosition(int w, int h) {
             //std::cout<<"mazafacka"<<std::endl;
             healTool->set_x((float) randomElementX);
             healTool->set_y((float) randomElementY);
-            array[randomElementY][randomElementX].set_Tool(healTool);
+
             count = 0;
         }
     }

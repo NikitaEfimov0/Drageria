@@ -3,13 +3,15 @@
 //
 
 #include "Archer.hpp"
-Archer::Archer() {
+Archer::Archer(bool Load) {
     x = 0;
     y = 0;
     health = 10;
     damage = 10;
     speed = 0.0015;
     observer.push_back(new ArcherSave(this));
+    if(Load)
+        observer[0]->update(1);
 }
 
 Archer::Archer(int w, int h){
@@ -23,7 +25,7 @@ Archer::Archer(int w, int h){
 }
 
 void Archer::notify() {
-    observer[0]->update();
+    observer[0]->update(0);
 }
 void Archer::fight(Object* object) {
     health-=object->return_damage();

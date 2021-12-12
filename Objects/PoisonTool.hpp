@@ -10,12 +10,14 @@ class PoisonTool:public Tool{
     int reducing;
     bool used;
 public:
-    PoisonTool(){
+    PoisonTool(bool Load){
         x = 0;
         y = 0;
         reducing = 10;
         used = false;
         observer.push_back(new PoisonSave(this));
+        if(Load)
+            observer[0]->update(1);
     }
     void usage(Object* hero){
         hero->set_health(hero->return_health()-reducing);
@@ -25,7 +27,7 @@ public:
         return used;
     }
 
-    void notify(){observer[0]->update();}
+    void notify(){observer[0]->update(0);}
 
     void set_used(bool u){used = u;}
 };

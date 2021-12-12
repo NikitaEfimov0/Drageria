@@ -4,9 +4,11 @@
 
 #include "SuperHealToolDraw.hpp"
 
-SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h):array(arr) {
-    superHealTool = new SuperHealTool();
-    SetRandomPosition(w, h);
+SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
+    superHealTool = new SuperHealTool(Load);
+    if(!Load)
+        SetRandomPosition(w, h);
+    array[int(superHealTool->return_y())][int(superHealTool->return_x())].set_Tool(superHealTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();
     drawable = true;
@@ -39,7 +41,7 @@ void SuperHealToolDraw::SetRandomPosition(int w, int h) {
             //std::cout<<"mazafacka"<<std::endl;
             superHealTool->set_x((float) randomElementX);
             superHealTool->set_y((float) randomElementY);
-            array[randomElementY][randomElementX].set_Tool(superHealTool);
+
 
             count = 0;
         }

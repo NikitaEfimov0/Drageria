@@ -3,9 +3,10 @@
 // Created by Никита Ефимов on 04.11.2021.
 //
 
-WormDraw::WormDraw(Cell **&array, int w, int h):arr(array) {
-    worm = new Worm();
-    SetRandomPosition(array, w, h);
+WormDraw::WormDraw(Cell **&array, int w, int h, bool Load):arr(array) {
+    worm = new Worm(Load);
+    if(!Load)
+        SetRandomPosition(array, w, h);
     dx = 0; dy = 0;
     direction = 1;
     CurrentFrame = 0;

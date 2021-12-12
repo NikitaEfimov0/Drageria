@@ -9,14 +9,14 @@
 class DragonFactory:public Factory{
     DragonDraw* dragonDraw;
 public:
-    DragonFactory(Cell** arr, int w, int h) {
+    DragonFactory(Cell** arr, int w, int h, bool L) {
         array = arr;
         x = w;
         y = h;
-
+        Load = L;
     }
     ObjectDraw* createObjectDraw(){
-        dragonDraw = new DragonDraw(array, x, y);
+        dragonDraw = new DragonDraw(array, x, y, Load);
         return dragonDraw;
     }
 };

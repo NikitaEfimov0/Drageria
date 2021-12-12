@@ -8,10 +8,10 @@
 #include "../Serialisation/DragonSave.hpp"
 class Dragon:public Enemy {
 public:
-    Dragon();
+    Dragon(bool Load);
     Dragon(int w, int h);
     void fight(Object* object);
-    void notify(){observer[0]->update();}
+    void notify(){observer[0]->update(0);}
 };
 
 

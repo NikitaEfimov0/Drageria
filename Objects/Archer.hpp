@@ -9,7 +9,7 @@
 #include "../Serialisation/ArcherSave.hpp"
 class Archer: public Enemy{
 public:
-    Archer();
+    Archer(bool Load);
     Archer(int w, int h);
     void fight(Object* object);
     void notify();

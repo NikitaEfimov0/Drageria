@@ -3,13 +3,15 @@
 //
 
 #include "Dragon.hpp"
-Dragon::Dragon() {
+Dragon::Dragon(bool Load) {
     x = 0;
     y = 0;
     health = 40;
     damage = 40;
     speed = 0.001;
     observer.push_back(new DragonSave(this));
+    if(Load)
+        observer[0]->update(1);
 }
 
 Dragon::Dragon(int w, int h) {

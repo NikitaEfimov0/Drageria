@@ -30,7 +30,10 @@ public:
     virtual bool returnKill(){return false;}
     bool returnF(){return false;}
     virtual bool return_used(){return false;}
-    void set_used(bool u){}
+
+    virtual int returnMaxHealth(){return 0;}
+    virtual void set_used(bool u){}
+    virtual void set_score(int i){}
 };
 
 

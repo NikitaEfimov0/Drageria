@@ -10,6 +10,7 @@ class Factory{
 protected:
     Cell** array;
     int x, y;
+    bool Load;
 public:
     virtual ~Factory(){};
     virtual ObjectDraw* createObjectDraw() = 0;

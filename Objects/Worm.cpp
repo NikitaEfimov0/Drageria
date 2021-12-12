@@ -3,13 +3,15 @@
 //
 
 #include "Worm.hpp"
-Worm::Worm() {
+Worm::Worm(bool Load) {
     x = 0;
     y = 0;
     health = 30;
     damage = 30;
     speed = 0.003;
     observer.push_back(new WormSave(this));
+    if(Load)
+        observer[0]->update(1);
 }
 
 Worm::Worm(int w, int h){

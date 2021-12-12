@@ -45,7 +45,8 @@ public:
         WriteToConsole();
     }
     virtual void update(){};
-    void update(int where){
+
+    virtual void update(int where){
         if(where == 0){
             WriteToConsole();
         }

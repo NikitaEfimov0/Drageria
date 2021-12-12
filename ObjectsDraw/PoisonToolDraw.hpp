@@ -11,7 +11,7 @@ class PoisonToolDraw:public ObjectDraw {
     PoisonTool* poisonTool;
     Cell**& array;
 public:
-    PoisonToolDraw(Cell**& arr, int w, int h);
+    PoisonToolDraw(Cell**& arr, int w, int h, bool Load);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     bool check_drawable();

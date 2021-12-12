@@ -14,7 +14,7 @@
 class Mediator: public MedInterface{
     Arbitrator* arbitrator;
     Game<RuleII<10, 10>>* game;
-    AmountOfObjects<1, 1, 1> am;
+    AmountOfObjects<1, 1, 1, 1, 1, 1> am;
     Menu* menu = new Menu(this);
 public:
     Mediator(){
@@ -37,8 +37,17 @@ public:
     void notify(int wantToPlay){
         if(wantToPlay == 1){
             arbitrator = new Arbitrator(12, 12, this);
-            arbitrator->start_working(am.returnArchers(), am.returnWorms(), am.returnDragons());
+            arbitrator->start_working(returnAm(), false);
         }
+        if(wantToPlay == 2){
+            arbitrator = new Arbitrator(12, 12, this);
+            arbitrator->start_working(returnAm(), true);
+        }
+
+    }
+    std::vector<int>returnAm(){
+        std::vector<int>n = {am.returnArchers(), am.returnWorms(), am.returnDragons(), am.returnHealTools(), am.returnPoisonTool(), am.returnSupHealTool()};
+        return n;
     }
 };
 

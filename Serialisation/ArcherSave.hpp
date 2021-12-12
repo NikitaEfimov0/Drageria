@@ -10,17 +10,21 @@ public:
     ArcherSave(Object* obj){
         observable = obj;
     }
-    void update(){
-        SaveToFile.open("Data/archerHis.json");
-        s["x"] = observable->return_x();
-        s["y"] = observable->return_y();
-        s["health"] = observable->return_health();
-        SaveToFile<<s;
-        SaveToFile.close();
+    void update(int where){
+        if(where)
+            load();
+        else {
+            SaveToFile.open("Data/archerHis.json");
+            s["x"] = observable->return_x();
+            s["y"] = observable->return_y();
+            s["health"] = observable->return_health();
+            SaveToFile << s;
+            SaveToFile.close();
+        }
     }
     virtual void load(){
+        LoadFromfile.open("Data/archerHis.json");
         if(!is_empty(LoadFromfile)) {
-            LoadFromfile.open("Data/archerHis.json");
             l = l.parse(LoadFromfile);
             observable->set_x(l["x"]);
             observable->set_y(l["y"]);

@@ -9,14 +9,17 @@
 class Hero: public Creature{
     int kills;
     bool reachedFinish;
+    int maxHealth = 40;
 public:
     Hero();
-    Hero(int x, int y);
+    Hero(int x, int y, bool Load);
     void notify();
     int returnKills();
     void setKills();
+    void set_score(int i){kills = i;}
     void setF();
     bool returnF();
+    int returnMaxHealth();
     Observer* returnConcrObs();
 };
 

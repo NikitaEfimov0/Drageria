@@ -11,7 +11,7 @@ class SuperHealToolDraw:public ObjectDraw {
     SuperHealTool* superHealTool;
     Cell**& array;
 public:
-    SuperHealToolDraw(Cell**& arr, int w, int h);
+    SuperHealToolDraw(Cell**& arr, int w, int h, bool Load);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     bool check_drawable();

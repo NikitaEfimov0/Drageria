@@ -3,11 +3,11 @@
 //
 
 #include "HeroDraw.hpp"
-HeroDraw::HeroDraw(Cell **&arr, int w, int h):array(arr){
+HeroDraw::HeroDraw(Cell **&arr, int w, int h, bool Load):array(arr){
     for(int i = 0;i < h; i++ )
         for(int j = 0; j < w; j++)
             if(arr[i][j].return_type() == 2) {
-                hero = new Hero(j, i);
+                hero = new Hero(j, i, Load);
             }
     dx = 0; dy = 0;
     CurrentFrame = 0;

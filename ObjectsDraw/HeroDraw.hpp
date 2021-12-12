@@ -20,7 +20,7 @@ class HeroDraw:public ObjectDraw{
     bool if_shooted;
     KeyReader* keyReader;
 public:
-    HeroDraw(Cell** &arr, int h, int w);
+    HeroDraw(Cell** &arr, int h, int w, bool Load);
     void draw(sf::RenderWindow& window);
     void set_graphic();
     void move(float time);

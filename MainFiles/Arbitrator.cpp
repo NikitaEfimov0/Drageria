@@ -14,31 +14,36 @@ Arbitrator::Arbitrator(int h, int w, MedInterface* med) {
     mediator = med;
 }
 
-void Arbitrator::start_working(int a, int w, int d) {
-    MainBoard->set_board();
-    objects.push_back(new HeroDraw(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width()));
-    StatPresenter = new PresentStat(objects[1]->returnObsFromObj());
-    WormFactory wf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height());
-    ArcherFactory af(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height());
-    DragonFactory df(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height());
-    for(int i = 0; i < a; i++){
-        objects.push_back(af.createObjectDraw());
-    }
-    for(int i = 0; i < w; i++){
-        objects.push_back(wf.createObjectDraw());
-    }
-    for(int i = 0; i < d; i++){
-        objects.push_back(df.createObjectDraw());
-    }
-
-//    objects.push_back(new ArcherDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-//    objects.push_back(new WormDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-//    objects.push_back(new DragonDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-    objects.push_back(new HealToolDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-    objects.push_back(new PoisonToolDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-    objects.push_back(new SuperHealToolDraw((MainBoard->return_array()), MainBoard->return_width(), MainBoard->return_height()));
-    objects[0]->set_graphic();
-    objects[0]->get_arrayofcell(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width());
+void Arbitrator::start_working(std::vector<int>am, bool Load) {
+        MainBoard->set_board();
+        objects.push_back(new HeroDraw(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width(), Load));
+        StatPresenter = new PresentStat(objects[1]->returnObsFromObj());
+        WormFactory wf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        ArcherFactory af(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        DragonFactory df(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        HealToolFactory hf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        PoisonToolFactory pf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        SuperHealToolFactory shf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        for (int i = 0; i < am[0]; i++) {
+            objects.push_back(af.createObjectDraw());
+        }
+        for (int i = 0; i < am[1]; i++) {
+            objects.push_back(wf.createObjectDraw());
+        }
+        for (int i = 0; i < am[2]; i++) {
+            objects.push_back(df.createObjectDraw());
+        }
+        for(int i = 0; i < am[3]; i++){
+            objects.push_back(hf.createObjectDraw());
+        }
+        for(int i = 0; i < am[4]; i++){
+            objects.push_back(pf.createObjectDraw());
+        }
+        for(int i = 0; i < am[5]; i++){
+            objects.push_back(shf.createObjectDraw());
+        }
+        objects[0]->set_graphic();
+        objects[0]->get_arrayofcell(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width());
     for(int i = 1; i< objects.size(); i++)
         objects[i]->set_graphic();
     update_statement();

@@ -24,6 +24,9 @@
 #include "../Factory/ArcherFactory.hpp"
 #include "../Factory/WormFactory.hpp"
 #include "../Factory/DragonFactory.hpp"
+#include "../Factory/SuperHealToolFactory.hpp"
+#include "../Factory/HealToolFactory.hpp"
+#include "../Factory/PoisonToolFactory.hpp"
 #include <vector>
 class Arbitrator {
     Finish* finish;
@@ -39,7 +42,7 @@ class Arbitrator {
 public:
     ~Arbitrator();
     Arbitrator(int h, int w, MedInterface* med);
-    void start_working(int a, int w, int d);
+    void start_working(std::vector<int>am, bool Load);
     void update_statement();
     void present();
     void check_death();

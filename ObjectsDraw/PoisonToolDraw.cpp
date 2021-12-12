@@ -6,9 +6,11 @@
 //
 // Created by Никита Ефимов on 06.11.2021.
 //
-PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h):array(arr) {
-    poisonTool = new PoisonTool();
-    SetRandomPosition(w, h);
+PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
+    poisonTool = new PoisonTool(Load);
+    if(!Load)
+        SetRandomPosition(w, h);
+    array[int(poisonTool->return_y())][int(poisonTool->return_x())].set_Tool(poisonTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();
     drawable = true;
@@ -40,7 +42,7 @@ void PoisonToolDraw::SetRandomPosition(int w, int h) {
             //std::cout<<"mazafacka"<<std::endl;
             poisonTool->set_x((float) randomElementX);
             poisonTool->set_y((float) randomElementY);
-            array[randomElementY][randomElementX].set_Tool(poisonTool);
+
             count = 0;
         }
     }
