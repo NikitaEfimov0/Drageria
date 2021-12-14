@@ -25,7 +25,6 @@ public:
     virtual void load(){
         LoadFromfile.open("Data/dragonHis.json");
         if(!is_empty(LoadFromfile)) {
-            ;
             l = l.parse(LoadFromfile);
             observable->set_x(l["x"]);
             observable->set_y(l["y"]);

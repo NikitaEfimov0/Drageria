@@ -7,18 +7,24 @@
 #include "Rule.hpp"
 template<int x, int y>
 class RuleII:public Rule{
-    std::pair<int, int>f = {x, y};
+    std::pair<int, int>f;
     std::pair<int, int>tmp;
-    bool died = false;
+    bool died;
     std::pair<bool, bool> res;
 public:
+    RuleII(){
+        f = {x, y};
+        died = false;
+    }
     std::pair<bool, bool> check(){
+        //std::cout<<died<<std::endl;
         if(died){
+            //std::cout<<"died\n";
             res.second = true;
+            died = false;
             return res;
         }
         if(f == tmp){
-            res.second = died;
             res.first = true;
             return res;
         }
@@ -27,9 +33,15 @@ public:
         return res;
     }
     void getCurrentState(HeroStatistic* state){
-         if(state->returnCurrentHealth()<=0)
+        //std::cout<<"health: "<<state->returnCurrentHealth()<<std::endl;
+         if(state->returnCurrentHealth()<=0){
              died = true;
-         tmp = state->returnCurrentCoord();
+         }
+         else {
+             died = false;
+             tmp = state->returnCurrentCoord();
+         }
+
     }
 };
 

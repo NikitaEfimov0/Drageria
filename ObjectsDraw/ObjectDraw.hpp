@@ -27,7 +27,7 @@ public:
     virtual  void move(float time){};
     virtual bool check_drawable(){return true;}
     virtual Object* returnObject(){return nullptr;}
-    virtual Observer* returnObsFromObj(){};
+    virtual Observer* returnObsFromObj(){return nullptr;};
 };
 
 

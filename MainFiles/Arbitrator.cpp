@@ -10,7 +10,7 @@ Arbitrator::Arbitrator(int h, int w, MedInterface* med) {
     objects.push_back(new BoardDraw());
     finish = new Finish();
     isFinish = false;
-    isWin = false;
+    isWin = isWinState::NONE;
     mediator = med;
 }
 
@@ -72,17 +72,23 @@ void Arbitrator::update_statement() {
             if (event.type == event.Closed) {
                 MainWindow->close();
             }
-
             if (event.type == event.KeyPressed) {
-                if (keys.checkExit())
+                if (keys.checkExit()) {
                     MainWindow->close();
-//                if(Keyboard::isKeyPressed(sf::Keyboard::P) && isFinish) {
-//                    mediator->notify(1);
-//                }
+                    if(!isFinish)
+                        mediator->notify(3);
+                    else {
+                        cleaner.clean();
+                        mediator->notify(5);
+                    }
+                    return;
+                }
             }
         }
-
-        mediator->notify();
+        if(!isFinish && isWin == isWinState::NONE) {
+            mediator->notify();
+        }
+        //std::cout<<"suck dick\n";
         if (!isFinish) {
             for (int i = 1; i < objects.size(); i++)
                 objects[i]->move(time);
@@ -97,9 +103,10 @@ void Arbitrator::update_statement() {
             StatPresenter->PresentScore(*MainWindow);
         }
         else {
-            if(isWin)
+            //std::cout<<"fuck up\n";
+            if(isWin == isWinState::Win)
                 win();
-            else
+            if(isWin ==  isWinState::Lose)
                 lose();
         }
         present();
@@ -126,8 +133,5 @@ void Arbitrator::exit() {
 }
 
 Arbitrator::~Arbitrator() {
-    delete MainBoard;
-    objects.clear();
-    delete MainWindow;
 
 }

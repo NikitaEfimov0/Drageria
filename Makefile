@@ -5,7 +5,7 @@ S = -std=c++20
 
 all: game
 game: Main.o Arbitrator.o  Board.o BoardGet.o Cell.o BoardDraw.o HeroDrow.o Hero.o GetPathToTexture.o FireBallDraw.o Archer.o ArcherDraw.o Worm.o WormDraw.o Dragon.o DragonDraw.o HealToolDraw.o PoisonToolDraw.o SuperHealToolDraw.o;
-	g++ $(S) Main.o Arbitrator.o BoardGet.o Board.o Cell.o BoardDraw.o HeroDraw.o Hero.o GetPathToTexture.o FireBallDraw.o Archer.o ArcherDraw.o Worm.o WormDraw.o Dragon.o DragonDraw.o HealToolDraw.o PoisonToolDraw.o SuperHealToolDraw.o -o game $(F) && make -f Makefile clean
+	g++ $(S) Main.o Arbitrator.o BoardGet.o Board.o Cell.o BoardDraw.o HeroDraw.o Hero.o GetPathToTexture.o FireBallDraw.o Archer.o ArcherDraw.o Worm.o WormDraw.o Dragon.o DragonDraw.o HealToolDraw.o PoisonToolDraw.o SuperHealToolDraw.o -o game $(F) -Wno-deprecated-declarations && make -f Makefile clean
 Main.o: ; g++ $(S) -g -c ./MainFiles/Main.cpp $(F)
 Arbitrator.o: ; g++ $(S) -g -c ./MainFiles/Arbitrator.cpp $(F)
 Board.o: ; g++ $(S) -g -c ./Board/Board.cpp $(F)

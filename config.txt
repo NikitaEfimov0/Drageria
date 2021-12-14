@@ -15,3 +15,5 @@ NewGame:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/newGame.jpg
 LoadGame:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/loadGame.jpg
 Exit:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/Exit.jpg
 Logo:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/logo.jpg
+ResumeGame:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/Resume.jpg
+Pause:/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/src/Pause.jpg

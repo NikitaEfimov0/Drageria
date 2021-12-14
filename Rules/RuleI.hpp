@@ -7,11 +7,16 @@
 #include "Rule.hpp"
 template<int a>
 class RuleI:public Rule{
-    int score = a;
-    int scoreNow = 0;
-    bool died = false;
+    int score;
+    int scoreNow;
+    bool died;
     std::pair<bool, bool> res;
 public:
+    RuleI(){
+        score = a;
+        scoreNow = 0;
+        died = false;
+    }
     std::pair<bool, bool> check(){
         if(died){
             res.first = false;
@@ -36,5 +41,9 @@ public:
         if(state->returnCurrentHealth()<=0)
             died = true;
     }
+//    ~RuleI(){
+//        scoreNow = 0;
+//        died = false;
+//    }
 };
 #endif //MVC_MVP_RULEI_HPP

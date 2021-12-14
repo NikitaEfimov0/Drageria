@@ -31,6 +31,7 @@ public:
             observable->set_health(l["health"]);
             LoadFromfile.close();
         }
+
     }
 };
 #endif //MVC_MVP_ARCHERSAVE_HPP

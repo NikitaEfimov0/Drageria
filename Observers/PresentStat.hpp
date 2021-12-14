@@ -21,9 +21,9 @@ public:
         font.loadFromFile(set_path.find("Font"));
         text = new sf::Text("", font, 50);
         scText = new sf::Text("", font, 60);
-        text->setColor(sf::Color::Red);
+        text->setFillColor(sf::Color::Red);
         text->setStyle(sf::Text::Bold);
-        scText->setColor(sf::Color::Red);
+        scText->setFillColor(sf::Color::Red);
         scText->setStyle(sf::Text::Italic);
     }
     void Present(sf::RenderWindow& window, Object* object) {
@@ -46,7 +46,12 @@ public:
         scText->setPosition(0, 0);
         window.draw(*scText);
     }
-
+//    ~PresentStat(){
+//        delete stat;
+//        delete text;
+//        delete scText;
+//        delete stat;
+//    }
 };
 
 

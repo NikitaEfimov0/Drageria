@@ -32,6 +32,7 @@ public:
     int returnCurrentScore(){return CurrentScore;}
     std::pair<float, float> returnCurrentCoord(){return CurrentCoord;}
 //    bool returnIsReached(){return isReached;}
+
 };
 
 

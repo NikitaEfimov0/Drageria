@@ -17,7 +17,7 @@
 using namespace sf;
 class Menu {
     GetPathToTexture getPath;
-    RenderWindow* window = new RenderWindow(VideoMode(1920, 1080), "MenuFiles");
+    RenderWindow* window = new RenderWindow(VideoMode(1920, 1080), "Drageria Launcher");
     std::vector<MenuElement*> menuElems;
     Texture* texture;
     Sprite* sprite;
@@ -42,7 +42,6 @@ public:
             while(window->pollEvent(event)){
                 if(event.type == Event::Closed) {
                     window->close();
-                    mediator->notify(0);
                 }
                 if(event.type == Event::MouseButtonPressed){
                     if(IntRect(710, 300, 500, 150).contains(Mouse::getPosition(*window)) && Mouse::isButtonPressed(Mouse::Left)){
@@ -59,7 +58,6 @@ public:
                 if(event.type == Event::MouseButtonPressed){
                     if(IntRect(710, 900, 500, 150).contains(Mouse::getPosition(*window)) && Mouse::isButtonPressed(Mouse::Left)){
                         window->close();
-                        mediator->notify(0);
                     }
                 }
             }

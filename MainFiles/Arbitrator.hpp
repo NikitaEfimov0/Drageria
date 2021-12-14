@@ -27,7 +27,11 @@
 #include "../Factory/SuperHealToolFactory.hpp"
 #include "../Factory/HealToolFactory.hpp"
 #include "../Factory/PoisonToolFactory.hpp"
+#include "../Data/Cleaner.hpp"
 #include <vector>
+enum class isWinState{
+    NONE, Win, Lose
+};
 class Arbitrator {
     Finish* finish;
     MedInterface* mediator;
@@ -37,7 +41,8 @@ class Arbitrator {
     std::vector<ObjectDraw*>objects;
     KeyReaderForWindow keys;
     bool isFinish;
-    bool isWin;
+    isWinState isWin;
+    Cleaner cleaner;
 
 public:
     ~Arbitrator();
@@ -50,7 +55,12 @@ public:
     void win();
     void lose();
     void setIsFinish(){isFinish = true;}
-    void changeIsWin(){isWin = true;}
+    void changeIsWin(bool w){
+        if(w)
+            isWin = isWinState::Win;
+        else
+            isWin = isWinState::Lose;
+    }
     void exit();
 };
 

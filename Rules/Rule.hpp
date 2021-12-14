@@ -9,6 +9,7 @@ class Rule{
 public:
     Rule(){
     }
+//    virtual ~Rule(){}
     virtual std::pair<bool, bool> check() = 0;
     virtual void getCurrentState(HeroStatistic* state){};
 };
