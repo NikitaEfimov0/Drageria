@@ -6,8 +6,8 @@
 //
 // Created by Никита Ефимов on 06.11.2021.
 //
-PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
-    poisonTool = new PoisonTool(Load);
+PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h, bool Load, int num):array(arr) {
+    poisonTool = new PoisonTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
     array[int(poisonTool->return_y())][int(poisonTool->return_x())].set_Tool(poisonTool);

@@ -13,6 +13,6 @@ protected:
     bool Load;
 public:
     virtual ~Factory(){};
-    virtual ObjectDraw* createObjectDraw() = 0;
+    virtual ObjectDraw* createObjectDraw(int ind) = 0;
 };
 #endif //MVC_MVP_FACTORY_HPP

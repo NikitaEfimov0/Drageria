@@ -25,22 +25,22 @@ void Arbitrator::start_working(std::vector<int>am, bool Load) {
         PoisonToolFactory pf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
         SuperHealToolFactory shf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
         for (int i = 0; i < am[0]; i++) {
-            objects.push_back(af.createObjectDraw());
+            objects.push_back(af.createObjectDraw(i));
         }
         for (int i = 0; i < am[1]; i++) {
-            objects.push_back(wf.createObjectDraw());
+            objects.push_back(wf.createObjectDraw(i));
         }
         for (int i = 0; i < am[2]; i++) {
-            objects.push_back(df.createObjectDraw());
+            objects.push_back(df.createObjectDraw(i));
         }
         for(int i = 0; i < am[3]; i++){
-            objects.push_back(hf.createObjectDraw());
+            objects.push_back(hf.createObjectDraw(i));
         }
         for(int i = 0; i < am[4]; i++){
-            objects.push_back(pf.createObjectDraw());
+            objects.push_back(pf.createObjectDraw(i));
         }
         for(int i = 0; i < am[5]; i++){
-            objects.push_back(shf.createObjectDraw());
+            objects.push_back(shf.createObjectDraw(i));
         }
         objects[0]->set_graphic();
         objects[0]->get_arrayofcell(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width());

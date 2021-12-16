@@ -3,8 +3,13 @@
 // Created by Никита Ефимов on 04.11.2021.
 //
 
-WormDraw::WormDraw(Cell **&array, int w, int h, bool Load):arr(array) {
-    worm = new Worm(Load);
+WormDraw::WormDraw(Cell **&array, int w, int h, bool Load, int num):arr(array) {
+    try {
+        worm = new Worm(Load, num);
+    }
+    catch (std::exception& ex){
+        SetRandomPosition(array, w, h);
+    }
     if(!Load)
         SetRandomPosition(array, w, h);
     dx = 0; dy = 0;

@@ -4,8 +4,8 @@
 
 #include "SuperHealToolDraw.hpp"
 
-SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
-    superHealTool = new SuperHealTool(Load);
+SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h, bool Load, int num):array(arr) {
+    superHealTool = new SuperHealTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
     array[int(superHealTool->return_y())][int(superHealTool->return_x())].set_Tool(superHealTool);

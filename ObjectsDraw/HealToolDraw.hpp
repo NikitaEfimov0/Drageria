@@ -11,7 +11,7 @@ class HealToolDraw:public ObjectDraw {
     HealTool* healTool;
     Cell**& array;
 public:
-    HealToolDraw(Cell**& arr, int w, int h, bool Load);
+    HealToolDraw(Cell**& arr, int w, int h, bool Load, int num);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     bool check_drawable();

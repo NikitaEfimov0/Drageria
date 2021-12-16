@@ -10,7 +10,7 @@ class DragonDraw :public ObjectDraw{
     Dragon* dragon;
     Cell** &arr;
 public:
-    DragonDraw(Cell **&array, int w, int h, bool Load);
+    DragonDraw(Cell **&array, int w, int h, bool Load, int num);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     virtual  void move(float time);

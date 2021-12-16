@@ -10,6 +10,7 @@ class Object {
 protected:
     //Mediator<RuleI>mediator;
     float x, y;
+    int number;
 public:
     virtual ~Object(){}
     void set_x(float i){
@@ -30,7 +31,7 @@ public:
     virtual bool returnKill(){return false;}
     bool returnF(){return false;}
     virtual bool return_used(){return false;}
-
+    virtual int returnNumber(){return number;}
     virtual int returnMaxHealth(){return 0;}
     virtual void set_used(bool u){}
     virtual void set_score(int i){}

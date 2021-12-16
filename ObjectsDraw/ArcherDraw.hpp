@@ -13,7 +13,7 @@ class ArcherDraw:public ObjectDraw {
     Archer* archer;
     Cell** &arr;
 public:
-    ArcherDraw(Cell **&array, int w, int h, bool Load);
+    ArcherDraw(Cell **&array, int w, int h, bool Load, int num);
     void draw(sf::RenderWindow &window);
     virtual void set_graphic();
     virtual  void move(float time);

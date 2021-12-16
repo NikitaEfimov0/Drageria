@@ -16,8 +16,8 @@ public:
         Load = L;
     }
 
-    ObjectDraw *createObjectDraw() {
-        superHealTool = new SuperHealToolDraw(array, x, y, Load);
+    ObjectDraw *createObjectDraw(int ind) {
+        superHealTool = new SuperHealToolDraw(array, x, y, Load, ind);
         return superHealTool;
     }
 };

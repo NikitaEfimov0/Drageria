@@ -10,11 +10,12 @@ class SuperHealTool:public Tool{
     int healing;
     bool used;
 public:
-    SuperHealTool(bool Load){
+    SuperHealTool(bool Load, int num){
         x = 0;
         y = 0;
         healing = 25;
         used = false;
+        number = num;
         observer.push_back(new SuperHealSave(this));
         if(Load)
             observer[0]->update(1);

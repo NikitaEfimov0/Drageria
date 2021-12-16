@@ -16,8 +16,8 @@ public:
         Load = L;
     }
 
-    ObjectDraw *createObjectDraw() {
-        poisonTool = new PoisonToolDraw(array, x, y, Load);
+    ObjectDraw *createObjectDraw(int ind) {
+        poisonTool = new PoisonToolDraw(array, x, y, Load, ind);
         return poisonTool;
     }
 };

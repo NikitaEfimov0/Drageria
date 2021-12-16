@@ -10,11 +10,12 @@ class PoisonTool:public Tool{
     int reducing;
     bool used;
 public:
-    PoisonTool(bool Load){
+    PoisonTool(bool Load, int num){
         x = 0;
         y = 0;
         reducing = 10;
         used = false;
+        number = num;
         observer.push_back(new PoisonSave(this));
         if(Load)
             observer[0]->update(1);

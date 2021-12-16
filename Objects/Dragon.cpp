@@ -3,9 +3,10 @@
 //
 
 #include "Dragon.hpp"
-Dragon::Dragon(bool Load) {
+Dragon::Dragon(bool Load, int num) {
     x = 0;
     y = 0;
+    number = num;
     health = 40;
     damage = 40;
     speed = 0.001;

@@ -18,7 +18,7 @@ public:
             mediator->notify(false);
         }
         if(rule->check().first){
-            std::cout<<2<<std::endl;
+            //std::cout<<2<<std::endl;
             mediator->notify(true);
         }
 

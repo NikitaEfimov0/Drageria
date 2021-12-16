@@ -10,11 +10,12 @@ class HealTool:public Tool {
     int healing;
     bool used;
 public:
-    HealTool(bool Load){
+    HealTool(bool Load, int num){
         x = 0;
         y = 0;
         healing = 10;
         used = false;
+        number = num;
         observer.push_back(new HealSave(this));
         if(Load)
             observer[0]->update(1);

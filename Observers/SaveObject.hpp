@@ -14,6 +14,7 @@ class SaveObject:public Observer{
 protected:
     json s;
     json l;
+    json tmp;
     std::ifstream LoadFromfile;
     std::ofstream SaveToFile;
 public:
@@ -28,5 +29,6 @@ public:
     }
     //void update(){std::cout<<2;};
     virtual void load(){};
+    virtual json tmpLoad(){return nullptr;}
 };
 #endif //MVC_MVP_SAVEOBJECT_HPP

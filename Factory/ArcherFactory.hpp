@@ -16,8 +16,8 @@ public:
         Load = L;
 
     }
-    ObjectDraw* createObjectDraw(){
-        archerDraw = new ArcherDraw(array, x, y, Load);
+    ObjectDraw* createObjectDraw(int ind){
+        archerDraw = new ArcherDraw(array, x, y, Load, ind);
         return archerDraw;
     }
 };

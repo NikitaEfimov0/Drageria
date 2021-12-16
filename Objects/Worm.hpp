@@ -8,7 +8,7 @@
 #include "../Serialisation/WormSave.hpp"
 class Worm:public Enemy {
 public:
-    Worm(bool Load);
+    Worm(bool Load, int num);
     Worm(int w, int h);
     void fight(Object* object);
     void notify(){observer[0]->update(0);}

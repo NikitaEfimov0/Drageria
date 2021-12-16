@@ -3,12 +3,13 @@
 //
 
 #include "Archer.hpp"
-Archer::Archer(bool Load) {
+Archer::Archer(bool Load, int num) {
     x = 0;
     y = 0;
     health = 10;
     damage = 10;
     speed = 0.0015;
+    number = num;
     observer.push_back(new ArcherSave(this));
     if(Load)
         observer[0]->update(1);

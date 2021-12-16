@@ -15,8 +15,8 @@ public:
         y = h;
         Load = L;
     }
-    ObjectDraw* createObjectDraw(){
-        healTool = new HealToolDraw(array, x, y, Load);
+    ObjectDraw* createObjectDraw(int ind){
+        healTool = new HealToolDraw(array, x, y, Load, ind);
         return healTool;
     }
 };

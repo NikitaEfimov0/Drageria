@@ -15,8 +15,8 @@ public:
         y = h;
         Load = L;
     }
-    ObjectDraw* createObjectDraw(){
-        dragonDraw = new DragonDraw(array, x, y, Load);
+    ObjectDraw* createObjectDraw(int ind){
+        dragonDraw = new DragonDraw(array, x, y, Load, ind);
         return dragonDraw;
     }
 };

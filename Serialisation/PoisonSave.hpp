@@ -14,10 +14,11 @@ public:
         if(where)
             load();
         else {
+            s = tmpLoad();
             SaveToFile.open("Data/PoisonHis.json");
-            s["x"] = observable->return_x();
-            s["y"] = observable->return_y();
-            s["used"] = observable->return_used();
+            s[std::to_string(observable->returnNumber())]["x"] = observable->return_x();
+            s[std::to_string(observable->returnNumber())]["y"] = observable->return_y();
+            s[std::to_string(observable->returnNumber())]["used"] = observable->return_used();
             SaveToFile << s;
             SaveToFile.close();
         }
@@ -25,13 +26,22 @@ public:
     virtual void load(){
         LoadFromfile.open("Data/PoisonHis.json");
         if(!is_empty(LoadFromfile)) {
-
             l = l.parse(LoadFromfile);
-            observable->set_x(l["x"]);
-            observable->set_y(l["y"]);
-            observable->set_used(l["used"]);
+            observable->set_x(l[std::to_string(observable->returnNumber())]["x"]);
+            observable->set_y(l[std::to_string(observable->returnNumber())]["y"]);
+            observable->set_used(l[std::to_string(observable->returnNumber())]["used"]);
             LoadFromfile.close();
         }
+    }
+    virtual json tmpLoad(){
+        LoadFromfile.open("Data/PoisonHis.json");
+        if(!is_empty(LoadFromfile)){
+            tmp = json::parse(LoadFromfile);
+        }
+        else
+            tmp = s;
+        LoadFromfile.close();
+        return tmp;
     }
 };
 #endif //MVC_MVP_POISONSAVE_HPP

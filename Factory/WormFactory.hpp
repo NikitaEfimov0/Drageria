@@ -15,8 +15,8 @@ public:
         y = h;
         Load = L;
     }
-    ObjectDraw* createObjectDraw(){
-        wormDraw = new WormDraw(array, x, y, Load);
+    ObjectDraw* createObjectDraw(int ind){
+        wormDraw = new WormDraw(array, x, y, Load, ind);
         return wormDraw;
     }
 };

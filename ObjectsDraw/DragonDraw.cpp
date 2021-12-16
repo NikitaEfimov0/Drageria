@@ -5,8 +5,8 @@
 // Created by Никита Ефимов on 06.11.2021.
 //
 
-DragonDraw::DragonDraw(Cell **&array, int w, int h, bool Load):arr(array) {
-    dragon = new Dragon(Load);
+DragonDraw::DragonDraw(Cell **&array, int w, int h, bool Load, int num):arr(array) {
+    dragon = new Dragon(Load, num);
     if(!Load)
         SetRandomPosition(array, w, h);
     //SetRandomPosition(array, w, h);

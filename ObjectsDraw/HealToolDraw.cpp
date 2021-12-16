@@ -3,8 +3,8 @@
 //
 
 #include "HealToolDraw.hpp"
-HealToolDraw::HealToolDraw(Cell** &arr, int w, int h, bool Load):array(arr) {
-    healTool = new HealTool(Load);
+HealToolDraw::HealToolDraw(Cell** &arr, int w, int h, bool Load, int num):array(arr) {
+    healTool = new HealTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
     array[int(healTool->return_y())][int(healTool->return_x())].set_Tool(healTool);
