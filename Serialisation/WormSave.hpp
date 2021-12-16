@@ -28,9 +28,13 @@ public:
         LoadFromfile.open("Data/wormHis.json");
         if(!is_empty(LoadFromfile)) {
             l = l.parse(LoadFromfile);
+            //try {
             observable->set_x(l[std::to_string(observable->returnNumber())]["x"]);
             observable->set_y(l[std::to_string(observable->returnNumber())]["y"]);
             observable->set_health(l[std::to_string(observable->returnNumber())]["health"]);
+//            }catch(json::exception& ex){
+//                throw std::runtime_error("ALARM!");
+//            }
             LoadFromfile.close();
         }
     }

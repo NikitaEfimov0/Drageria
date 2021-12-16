@@ -7,6 +7,8 @@ HealToolDraw::HealToolDraw(Cell** &arr, int w, int h, bool Load, int num):array(
     healTool = new HealTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
+    if(healTool->return_x()>=w||healTool->return_y()>=h)
+        throw std::exception();
     array[int(healTool->return_y())][int(healTool->return_x())].set_Tool(healTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();

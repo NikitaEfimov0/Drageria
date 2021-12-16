@@ -5,8 +5,13 @@
 
 ArcherDraw::ArcherDraw(Cell **&array, int w, int h, bool Load, int num):arr(array) {
     archer = new Archer(Load, num);
+
     if(!Load)
         SetRandomPosition(array, w, h);
+    else if(archer->return_x()<w && archer->return_y()<h)
+        arr[(int)(archer->return_y())][(int)(archer->return_x())].set_object(archer);
+    else
+        throw std::exception();
     dx = 0; dy = 0;
     direction = 1;
     CurrentFrame = 0;

@@ -27,9 +27,13 @@ public:
         LoadFromfile.open("Data/SuperHealHis.json");
         if(!is_empty(LoadFromfile)) {
             l = l.parse(LoadFromfile);
-            observable->set_x(l[std::to_string(observable->returnNumber())]["x"]);
-            observable->set_y(l[std::to_string(observable->returnNumber())]["y"]);
-            observable->set_used(l[std::to_string(observable->returnNumber())]["used"]);
+            //try {
+                observable->set_x(l[std::to_string(observable->returnNumber())]["x"]);
+                observable->set_y(l[std::to_string(observable->returnNumber())]["y"]);
+                observable->set_health(l[std::to_string(observable->returnNumber())]["used"]);
+//            }catch(json::exception& ex){
+//                throw std::runtime_error("ALARM!");
+//            }
             LoadFromfile.close();
         }
     }

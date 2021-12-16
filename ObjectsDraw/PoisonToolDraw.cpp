@@ -10,6 +10,8 @@ PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h, bool Load, int num):ar
     poisonTool = new PoisonTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
+    if(poisonTool->return_x()>=w||poisonTool->return_y()>=h)
+        throw std::exception();
     array[int(poisonTool->return_y())][int(poisonTool->return_x())].set_Tool(poisonTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();
@@ -34,7 +36,6 @@ void PoisonToolDraw::SetRandomPosition(int w, int h) {
     int count = 1;
     srand(time(0));
     while(count!=0){
-
         randomElementX = 1 + rand() % (w - 1);
         randomElementY = 1 + rand() % (h - 1);
         //std::cout<<"healtool x: "<<randomElementX<<' '<<"healtool y: "<<randomElementY<<' '<<"type: "<<array[randomElementY][randomElementX].return_type() <<std::endl;

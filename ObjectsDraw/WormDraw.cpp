@@ -3,15 +3,14 @@
 // Created by Никита Ефимов on 04.11.2021.
 //
 
-WormDraw::WormDraw(Cell **&array, int w, int h, bool Load, int num):arr(array) {
-    try {
-        worm = new Worm(Load, num);
-    }
-    catch (std::exception& ex){
-        SetRandomPosition(array, w, h);
-    }
+WormDraw::WormDraw(Cell **&array, int w, int h, bool Load, int num):arr(array){
+    worm = new Worm(Load, num);
     if(!Load)
         SetRandomPosition(array, w, h);
+    else if(worm->return_x()<w && worm->return_y()<h)
+        arr[(int)(worm->return_y())][(int)(worm->return_x())].set_object(worm);
+    else
+        throw std::exception();
     dx = 0; dy = 0;
     direction = 1;
     CurrentFrame = 0;

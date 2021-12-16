@@ -8,6 +8,8 @@ SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h, bool Load, int n
     superHealTool = new SuperHealTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
+    if(superHealTool->return_x()>=w||superHealTool->return_y()>=h)
+        throw std::exception();
     array[int(superHealTool->return_y())][int(superHealTool->return_x())].set_Tool(superHealTool);
     texture = new sf::Texture();
     sprite = new sf::Sprite();

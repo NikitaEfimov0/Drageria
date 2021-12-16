@@ -7,8 +7,13 @@
 
 DragonDraw::DragonDraw(Cell **&array, int w, int h, bool Load, int num):arr(array) {
     dragon = new Dragon(Load, num);
+
     if(!Load)
         SetRandomPosition(array, w, h);
+    else if(dragon->return_x()<w && dragon->return_y()<h)
+        arr[(int)(dragon->return_y())][(int)(dragon->return_x())].set_object(dragon);
+    else
+        throw std::exception();
     //SetRandomPosition(array, w, h);
     dx = 0; dy = 0;
     direction = 1;

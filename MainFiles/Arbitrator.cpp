@@ -15,6 +15,7 @@ Arbitrator::Arbitrator(int h, int w, MedInterface* med) {
 }
 
 void Arbitrator::start_working(std::vector<int>am, bool Load) {
+    try {
         MainBoard->set_board();
         objects.push_back(new HeroDraw(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width(), Load));
         StatPresenter = new PresentStat(objects[1]->returnObsFromObj());
@@ -23,7 +24,7 @@ void Arbitrator::start_working(std::vector<int>am, bool Load) {
         DragonFactory df(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
         HealToolFactory hf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
         PoisonToolFactory pf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
-        SuperHealToolFactory shf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(), Load);
+        SuperHealToolFactory shf(MainBoard->return_array(), MainBoard->return_width(), MainBoard->return_height(),Load);
         for (int i = 0; i < am[0]; i++) {
             objects.push_back(af.createObjectDraw(i));
         }
@@ -33,19 +34,26 @@ void Arbitrator::start_working(std::vector<int>am, bool Load) {
         for (int i = 0; i < am[2]; i++) {
             objects.push_back(df.createObjectDraw(i));
         }
-        for(int i = 0; i < am[3]; i++){
+        for (int i = 0; i < am[3]; i++) {
             objects.push_back(hf.createObjectDraw(i));
         }
-        for(int i = 0; i < am[4]; i++){
+        for (int i = 0; i < am[4]; i++) {
             objects.push_back(pf.createObjectDraw(i));
         }
-        for(int i = 0; i < am[5]; i++){
+        for (int i = 0; i < am[5]; i++) {
             objects.push_back(shf.createObjectDraw(i));
         }
         objects[0]->set_graphic();
         objects[0]->get_arrayofcell(MainBoard->return_array(), MainBoard->return_height(), MainBoard->return_width());
-    for(int i = 1; i< objects.size(); i++)
-        objects[i]->set_graphic();
+        for (int i = 1; i < objects.size(); i++)
+            objects[i]->set_graphic();
+    }catch(json::exception & ex){
+        MainWindow->close();
+        mediator->notify(1);
+    }catch(std::exception& ex){
+        MainWindow->close();
+        mediator->notify(1);
+    }
     update_statement();
 }
 
@@ -90,17 +98,22 @@ void Arbitrator::update_statement() {
         }
         //std::cout<<"suck dick\n";
         if (!isFinish) {
-            for (int i = 1; i < objects.size(); i++)
-                objects[i]->move(time);
-            MainWindow->clear();
-            check_death();
-            for (int i = 0; i < objects.size(); i++) {
-                objects[i]->draw(*MainWindow);
+            try {
+                for (int i = 1; i < objects.size(); i++)
+                    objects[i]->move(time);
+            }catch (std::runtime_error& er){
+                MainWindow->close();
+                mediator->notify(1);
             }
-            for (int i = 0; i < objects.size(); i++) {
-                StatPresenter->Present(*MainWindow, objects[i]->returnObject());
-            }
-            StatPresenter->PresentScore(*MainWindow);
+                MainWindow->clear();
+                check_death();
+                for (int i = 0; i < objects.size(); i++) {
+                    objects[i]->draw(*MainWindow);
+                }
+                for (int i = 0; i < objects.size(); i++) {
+                    StatPresenter->Present(*MainWindow, objects[i]->returnObject());
+                }
+                StatPresenter->PresentScore(*MainWindow);
         }
         else {
             //std::cout<<"fuck up\n";
