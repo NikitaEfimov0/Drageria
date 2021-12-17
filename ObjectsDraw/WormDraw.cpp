@@ -7,7 +7,7 @@ WormDraw::WormDraw(Cell **&array, int w, int h, bool Load, int num):arr(array){
     worm = new Worm(Load, num);
     if(!Load)
         SetRandomPosition(array, w, h);
-    else if(worm->return_x()<w && worm->return_y()<h)
+    else if((worm->return_x()<w && worm->return_y()<h) && (worm->return_x()> 0 && worm->return_y()> 0))
         arr[(int)(worm->return_y())][(int)(worm->return_x())].set_object(worm);
     else
         throw std::exception();

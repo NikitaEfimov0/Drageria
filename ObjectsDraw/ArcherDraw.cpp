@@ -8,7 +8,7 @@ ArcherDraw::ArcherDraw(Cell **&array, int w, int h, bool Load, int num):arr(arra
 
     if(!Load)
         SetRandomPosition(array, w, h);
-    else if(archer->return_x()<w && archer->return_y()<h)
+    else if(archer->return_x()<w && archer->return_y()<h && (archer->return_x()>0 && archer->return_y()>0))
         arr[(int)(archer->return_y())][(int)(archer->return_x())].set_object(archer);
     else
         throw std::exception();

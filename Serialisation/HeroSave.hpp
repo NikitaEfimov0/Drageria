@@ -33,6 +33,8 @@ public:
             observable->set_score(l["score"]);
             LoadFromfile.close();
         }
+        else
+            throw std::exception();
 
     }
 };

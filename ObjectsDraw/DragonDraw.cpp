@@ -10,7 +10,7 @@ DragonDraw::DragonDraw(Cell **&array, int w, int h, bool Load, int num):arr(arra
 
     if(!Load)
         SetRandomPosition(array, w, h);
-    else if(dragon->return_x()<w && dragon->return_y()<h)
+    else if(dragon->return_x()<w && dragon->return_y()<h && (dragon->return_x()>0 && dragon->return_y()>0))
         arr[(int)(dragon->return_y())][(int)(dragon->return_x())].set_object(dragon);
     else
         throw std::exception();

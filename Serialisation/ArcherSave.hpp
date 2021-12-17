@@ -36,12 +36,18 @@ public:
 //            }
             LoadFromfile.close();
         }
+        else
+            throw std::exception();
 
     }
     virtual json tmpLoad(){
         LoadFromfile.open("Data/archerHis.json");
         if(!is_empty(LoadFromfile)){
-            tmp = json::parse(LoadFromfile);
+            try {
+                tmp = json::parse(LoadFromfile);
+            }catch(json::parse_error& ex){
+                tmp.clear();
+            }
         }
         else
             tmp = s;

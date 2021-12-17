@@ -8,7 +8,7 @@ SuperHealToolDraw::SuperHealToolDraw(Cell** &arr, int w, int h, bool Load, int n
     superHealTool = new SuperHealTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
-    if(superHealTool->return_x()>=w||superHealTool->return_y()>=h)
+    if(superHealTool->return_x()>=w||superHealTool->return_y()>=h && (superHealTool->return_x()<0 || superHealTool->return_y()<0))
         throw std::exception();
     array[int(superHealTool->return_y())][int(superHealTool->return_x())].set_Tool(superHealTool);
     texture = new sf::Texture();

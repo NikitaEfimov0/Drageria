@@ -10,7 +10,7 @@ PoisonToolDraw::PoisonToolDraw(Cell** &arr, int w, int h, bool Load, int num):ar
     poisonTool = new PoisonTool(Load, num);
     if(!Load)
         SetRandomPosition(w, h);
-    if(poisonTool->return_x()>=w||poisonTool->return_y()>=h)
+    if(poisonTool->return_x()>=w||poisonTool->return_y()>=h && (poisonTool->return_x()<0 || poisonTool->return_y()<0))
         throw std::exception();
     array[int(poisonTool->return_y())][int(poisonTool->return_x())].set_Tool(poisonTool);
     texture = new sf::Texture();
