@@ -58,7 +58,7 @@ Board& Board::operator=(Board&& other){
 }
 
 void Board::set_board() {
-    BoardGet* get = new BoardGet("/Users/ddomingo/Desktop/OOP(Univ)/lb_first_sem/levels/lvl1.txt", height, width);
+    BoardGet* get = new BoardGet("../levels/lvl1.txt", height, width);
     for(int i = 0; i < height; i++)
         for(int j = 0; j < width;j++){
             arrayofcell[i][j].set_type(get->return_arr()[i][j]);
