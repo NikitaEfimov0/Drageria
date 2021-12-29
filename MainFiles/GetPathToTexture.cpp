@@ -13,7 +13,7 @@ std::string GetPathToTexture::find(const std::string& name){
         if(where!=-1){
             int start = 0;
             for(int i = 0; i < tmp.length();i++) {
-                while (tmp[i] != '/' && start == 0){
+                while (tmp[i] != '.' && start == 0){
                     i++;
                 }
                 start = 1;
