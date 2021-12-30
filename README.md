@@ -2,8 +2,8 @@
 2D Game, C++
 To install this game on your computer, please enter this follow comands in your terminal:
 
-brew install sfml
-git clone https://github.com/NikitaEfimov0/Drageria
-cd Drageria
-make
-./game
+<pre><code>brew install sfml</code></pre>
+<pre><code>git clone https://github.com/NikitaEfimov0/Drageria</code></pre>
+<pre><code>cd Drageria</code></pre>
+<pre><code>make</code></pre>
+<pre><code>./game</code></pre>
